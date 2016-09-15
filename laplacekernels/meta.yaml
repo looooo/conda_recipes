@@ -1,0 +1,23 @@
+package:
+  name: laplacekernels
+  version: 0.0.1
+
+build:
+  number: 9
+
+source:
+  git_url: https://github.com/looooo/laplace_kernels.git
+
+requirements:
+  build:
+    - python
+    - pybind11        # pybind
+    - cmake
+    - eigen           # rmg
+    - paraeigen       # openglider
+  run:
+    - python
+    - paraeigen
+
+about:
+  summary: Some laplace kernels
