@@ -14,11 +14,12 @@ requirements:
     - pybind11        # pybind
     - cmake
     - eigen           # rmg
-    - paraeigen       # openglider
-    - laplacekernels
+    - paraeigen       # looooo
+    - laplacekernels  # looooo
   run:
     - python
     - paraeigen
+    - laplacekernels  # looooo
 
 about:
   summary: BEM and FEM to compute torsional stiffness

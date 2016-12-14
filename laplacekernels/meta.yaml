@@ -13,8 +13,8 @@ requirements:
     - python
     - pybind11        # pybind
     - cmake
-    - eigen           # rmg
-    - paraeigen       # openglider
+    - eigen 3.3       # looooo
+    - paraeigen       # looooo
   run:
     - python
     - paraeigen
