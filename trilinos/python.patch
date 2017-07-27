@@ -1,0 +1,57 @@
+diff --git a/packages/PyTrilinos/example/CMakeLists.txt b/packages/PyTrilinos/example/CMakeLists.txt
+index aab0ad4..2ede431 100644
+--- a/packages/PyTrilinos/example/CMakeLists.txt
++++ b/packages/PyTrilinos/example/CMakeLists.txt
+@@ -47,7 +47,7 @@ ENABLE_TESTING()
+ INCLUDE(PyTrilinosMakeTest)
+ 
+ ADD_CUSTOM_COMMAND(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/testutil.py
+-  COMMAND ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
++  COMMAND python ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
+           ${CMAKE_CURRENT_SOURCE_DIR}/testutil.py.in
+ 	  ${CMAKE_CURRENT_BINARY_DIR}/testutil.py
+   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/testutil.py.in)
+@@ -56,7 +56,7 @@ ADD_CUSTOM_TARGET(PyTrilinos_Example_testutil ALL
+   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/testutil.py)
+ 
+ ADD_CUSTOM_COMMAND(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/gre__115.rua
+-  COMMAND ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
++  COMMAND python ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
+           ${CMAKE_CURRENT_SOURCE_DIR}/gre__115.mx
+ 	  ${CMAKE_CURRENT_BINARY_DIR}/gre__115.rua
+   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/gre__115.mx)
+diff --git a/packages/PyTrilinos/src/scripts/CMakeLists.txt b/packages/PyTrilinos/src/scripts/CMakeLists.txt
+index 4193a3b..69a0711 100644
+--- a/packages/PyTrilinos/src/scripts/CMakeLists.txt
++++ b/packages/PyTrilinos/src/scripts/CMakeLists.txt
+@@ -43,7 +43,7 @@
+ # @HEADER
+ 
+ ADD_CUSTOM_COMMAND(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/testutil.py
+-  COMMAND ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
++  COMMAND python ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
+           ${CMAKE_CURRENT_SOURCE_DIR}/testutil.py.in
+ 	  ${CMAKE_CURRENT_BINARY_DIR}/testutil.py
+   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/testutil.py.in)
+@@ -54,7 +54,7 @@ ADD_CUSTOM_TARGET(PyTrilinos_Scripts_testutil ALL
+ MACRO(PyTrilinos_MAKE_SCRIPT SCRIPT_NAME)
+ 
+   ADD_CUSTOM_COMMAND(OUTPUT ${SCRIPT_NAME}.py
+-    COMMAND ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
++    COMMAND python ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
+             ${CMAKE_CURRENT_SOURCE_DIR}/${SCRIPT_NAME}.py.in
+ 	    ${CMAKE_CURRENT_BINARY_DIR}/${SCRIPT_NAME}.py
+     DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${SCRIPT_NAME}.py.in)
+diff --git a/packages/PyTrilinos/test/CMakeLists.txt b/packages/PyTrilinos/test/CMakeLists.txt
+index 1d460b3..8cfc657 100644
+--- a/packages/PyTrilinos/test/CMakeLists.txt
++++ b/packages/PyTrilinos/test/CMakeLists.txt
+@@ -46,7 +46,7 @@ ENABLE_TESTING()
+ INCLUDE(PyTrilinosMakeTest)
+ 
+ ADD_CUSTOM_COMMAND(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/testutil.py
+-  COMMAND ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
++  COMMAND python ${PyTrilinos_BINARY_DIR}/util/copyWithCMakeSubstitutions.py
+           ${CMAKE_CURRENT_SOURCE_DIR}/testutil.py.in
+ 	  ${CMAKE_CURRENT_BINARY_DIR}/testutil.py
+   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/testutil.py.in)

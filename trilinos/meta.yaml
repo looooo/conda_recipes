@@ -1,0 +1,36 @@
+# This file created by conda-build 2.1.0
+# meta.yaml template originally from:
+# /tmp/conda-recipes/trilinos, last modified Sat Jan  7 02:39:12 2017
+# ------------------------------------------------
+
+package:
+    name: trilinos
+    version: 12.10.1
+source:
+    fn: trilinios.tar.gz
+    url: https://github.com/trilinos/Trilinos/archive/master.tar.gz
+    patches:
+        - python.patch
+build:
+    number: '0'    
+
+    features:
+        - blas_openblas
+requirements:
+    build:
+        - openblas
+        - mpich
+        - python
+        - numpy
+        - swig
+    run:
+        - python
+        - numpy
+        - nomkl
+        - mpich
+        - openblas
+test:
+    imports:
+        - PyTrilinos
+        - PyTrilinos._Teuchos
+        - PyTrilinos.ML
