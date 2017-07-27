@@ -18,6 +18,7 @@ build:
         - blas_openblas
 requirements:
     build:
+        - cmake  # [unix]
         - openblas
         - mpich
         - python

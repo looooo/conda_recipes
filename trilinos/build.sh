@@ -37,4 +37,5 @@ cmake \
 make -j $CPU_COUNT
 make install
 
-
+# because of wrong linking:
+rm -rf ${PREFIX}/lib/cmake/tribits/doc/developers_guide/TribitsBuildReference.html
