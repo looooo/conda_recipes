@@ -1,9 +1,11 @@
+# make sure gfortran is installed: yum install gcc-gfortran !!!
+
 package:
     name: dakota
     version: 6.6.0
 
 build:
-    number: '0'    
+    number: '1'    
 
     features:
         - blas_openblas
@@ -16,10 +18,13 @@ requirements:
         - perl
         - numpy
         - swig
-        - libgfortran
         - doxygen
+        - mpich
     run:
         - python
         - numpy
         - nomkl
         - openblas
+test:
+    imports:
+        - dakota
