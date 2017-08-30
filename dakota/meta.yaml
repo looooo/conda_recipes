@@ -1,0 +1,25 @@
+package:
+    name: dakota
+    version: 6.6.0
+
+build:
+    number: '0'    
+
+    features:
+        - blas_openblas
+requirements:
+    build:
+        - cmake  # [unix]
+        - boost-cpp
+        - openblas
+        - python
+        - perl
+        - numpy
+        - swig
+        - libgfortran
+        - doxygen
+    run:
+        - python
+        - numpy
+        - nomkl
+        - openblas
