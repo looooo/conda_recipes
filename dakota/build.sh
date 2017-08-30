@@ -8,7 +8,7 @@ cmake \
     -D CMAKE_INSTALL_PREFIX:PATH=$PREFIX \
     -D HAVE_X_GRAPHICS=OFF \
     -D BUILD_IN_TRILINOS=OFF \
-    /projects/dakota_src/dakota
+    /projects/dakota
 
 make -j $CPU_COUNT
 make install
