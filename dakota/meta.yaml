@@ -18,6 +18,7 @@ requirements:
         - swig
         - libgfortran
         - doxygen
+        - mpich
     run:
         - python
         - numpy
