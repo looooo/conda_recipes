@@ -17,6 +17,3 @@ cmake \
 
 make -j $CPU_COUNT
 make install
-
-mv $PREFIX/examples $PREFIX/share/dakota/hopspack
-

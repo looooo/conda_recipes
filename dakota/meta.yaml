@@ -2,13 +2,11 @@
 
 package:
     name: dakota
-    version: 6.6.0
+    version: 6.7.0
 
 build:
-    number: '1'    
+    number: '0'    
 
-    features:
-        - blas_openblas
 requirements:
     build:
         - cmake  # [unix]
@@ -19,12 +17,14 @@ requirements:
         - numpy
         - swig
         - doxygen
-        - mpich
+        - openmpi
+        - trilinos
     run:
         - python
         - numpy
         - nomkl
         - openblas
+        - trilinos
 test:
     imports:
         - dakota
