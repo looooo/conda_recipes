@@ -10,7 +10,7 @@ build:
 requirements:
     build:
         - cmake  # [unix]
-        - boost-cpp
+        - boost-cpp 1.64*
         - openblas
         - python
         - perl
@@ -20,6 +20,7 @@ requirements:
         - openmpi
         - trilinos
     run:
+        - boost-cpp 1.64*
         - python
         - numpy
         - nomkl
