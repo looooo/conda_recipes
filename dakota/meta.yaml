@@ -5,27 +5,30 @@ package:
     version: 6.7.0
 
 build:
-    number: '0'    
+    number: '0'
+    skip:
+        - true # [py < 36]
 
 requirements:
     build:
-        - cmake  # [unix]
+        - cmake
         - boost-cpp 1.64*
-        - openblas
+        - openblas  # [unix]
         - python
         - perl
         - numpy
         - swig
         - doxygen
-        - openmpi
-        - trilinos
+        - m2w64-toolchain  # [win]
+        - openmpi  # [unix]
+        - trilinos  # [unix]
     run:
         - boost-cpp 1.64*
         - python
         - numpy
-        - nomkl
-        - openblas
-        - trilinos
+        - nomkl  # [unix]
+        - openblas  # [unix]
+        - trilinos  # [unix]
 test:
     imports:
         - dakota
